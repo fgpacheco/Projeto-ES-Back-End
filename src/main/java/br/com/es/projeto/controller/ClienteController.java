@@ -25,18 +25,18 @@ public class ClienteController {
     }
 
     @PutMapping(value = "/update")
-    public ResponseEntity update(@RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<ClienteDTO> update(@RequestBody ClienteDTO clienteDTO) {
         clienteService.update(clienteDTO);
         return ResponseEntity.ok().build();
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity recover(@PathVariable("id") Long idCliente) {
+    public ResponseEntity<ClienteDTO> recover(@PathVariable("id") Long idCliente) {
         return ResponseEntity.ok().body(clienteService.recover(idCliente));
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity delete(@PathVariable("id") Long idCliente) {
+    public ResponseEntity<ClienteDTO> delete(@PathVariable("id") Long idCliente) {
         clienteService.delete(idCliente);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
