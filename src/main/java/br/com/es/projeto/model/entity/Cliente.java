@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Cliente {
 
     @Id
-    @Column(name = "ID_CONTA", nullable = false)
+    @Column(name = "ID", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
